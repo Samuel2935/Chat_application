@@ -1,4 +1,3 @@
-
 import { useNavigate } from 'react-router-dom';
 
 const ChatBody = ({ messages, lastMessageRef }) => {
@@ -11,16 +10,16 @@ const ChatBody = ({ messages, lastMessageRef }) => {
   };
 
   return (
-    <div className=''>
+    <div className="">
       <header className="chat__mainHeader ">
-        <p>{ "Team Hangout"}</p>
+        <p>{'Team Hangout'}</p>
         <button className="leaveChat__btn" onClick={handleLeaveChat}>
           Leave
         </button>
       </header>
 
       <div className="message__container">
-      <p className='fixed pt-2'>Someone is typing...</p>
+        <p className="fixed pt-2">Someone is typing...</p>
         {messages.map((message) =>
           message.name === localStorage.getItem('userName') ? (
             <div className="message__chats" key={message.id}>
@@ -39,10 +38,7 @@ const ChatBody = ({ messages, lastMessageRef }) => {
           )
         )}
 
-        <div className="message__status">
-       
-          {/* <p>{typingStatus}</p> */}
-        </div>
+        <div className="message__status">{/* <p>{typingStatus}</p> */}</div>
         <div ref={lastMessageRef} />
       </div>
     </div>
@@ -50,5 +46,4 @@ const ChatBody = ({ messages, lastMessageRef }) => {
 };
 
 export default ChatBody;
-
 
